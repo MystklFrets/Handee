@@ -31,8 +31,6 @@ class ViewController: UIViewController {
         let blueView = UIView()
         blueView.backgroundColor = .blue
         
-        //let yellowView = UIView()
-        //yellowView.backgroundColor = .yellow
        
         
         let buttonStackView = HomeBottomControlsStackView()
