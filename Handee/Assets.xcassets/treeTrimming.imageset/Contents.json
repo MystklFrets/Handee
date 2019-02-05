@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "treeTrimming.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "treeTrimming.jpg",
       "scale" : "2x"
     },
     {

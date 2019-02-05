@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        FirebaseApp.configure()
+        let db = Firestore.firestore()
+        let settings = db.settings
+        
+//        let timestamp: Timestamp = DocumentSnapshot.get("created_at") as! Timestamp
+//        let date: Date = timestamp.dateValue()
+        
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+        
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        //Change controller name to change what controller shows up initially
+        window?.rootViewController = HomeController()
+        
         return true
     }
 

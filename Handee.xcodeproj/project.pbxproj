@@ -8,28 +8,54 @@
 
 /* Begin PBXBuildFile section */
 		270DFB82219945C900A37404 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270DFB81219945C900A37404 /* AppDelegate.swift */; };
-		270DFB84219945C900A37404 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270DFB83219945C900A37404 /* ViewController.swift */; };
+		270DFB84219945C900A37404 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270DFB83219945C900A37404 /* HomeController.swift */; };
 		270DFB87219945C900A37404 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270DFB85219945C900A37404 /* Main.storyboard */; };
 		270DFB89219945CA00A37404 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270DFB88219945CA00A37404 /* Assets.xcassets */; };
 		270DFB8C219945CA00A37404 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270DFB8A219945CA00A37404 /* LaunchScreen.storyboard */; };
 		270DFB9421994ACE00A37404 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270DFB9321994ACE00A37404 /* Extensions+UIView.swift */; };
+		2712C63A21E4786300DECD9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2712C63921E4786300DECD9F /* GoogleService-Info.plist */; };
+		2712C63C21E83B0B00DECD9F /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2712C63B21E83B0B00DECD9F /* Bindable.swift */; };
+		2725718021FEB189007AF94B /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725717F21FEB189007AF94B /* SettingsController.swift */; };
+		27257182220175BC007AF94B /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27257181220175BC007AF94B /* SettingsCell.swift */; };
+		272A56002207FE07000B964C /* AgeRangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272A55FF2207FE07000B964C /* AgeRangeCell.swift */; };
 		272B11E621A1E21F00B5014B /* TopNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B11E521A1E21F00B5014B /* TopNavigationStackView.swift */; };
 		272B11E821A23BC700B5014B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B11E721A23BC700B5014B /* CardView.swift */; };
+		272B11EB21ABB00E00B5014B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B11EA21ABB00E00B5014B /* User.swift */; };
+		272B11EF21B4EC2F00B5014B /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B11EE21B4EC2F00B5014B /* CardViewModel.swift */; };
+		272CEDA821C0D7F200EFCBE2 /* Advertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272CEDA721C0D7F200EFCBE2 /* Advertiser.swift */; };
 		2789A5AF219BED7E0009230B /* HomeBottomControlsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789A5AE219BED7E0009230B /* HomeBottomControlsStackView.swift */; };
+		27D89C0D21DC75CC007123BB /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D89C0C21DC75CC007123BB /* RegistrationController.swift */; };
+		27D89C0F21DC81F4007123BB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D89C0E21DC81F4007123BB /* CustomTextField.swift */; };
+		27D89C1121E3201E007123BB /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D89C1021E3201E007123BB /* RegistrationViewModel.swift */; };
+		AA18AD7D314A805F1EE2E984 /* Pods_Handee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F79E350DDFB81E3E96753F8E /* Pods_Handee.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		270DFB7E219945C900A37404 /* Handee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Handee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		270DFB81219945C900A37404 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		270DFB83219945C900A37404 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		270DFB83219945C900A37404 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		270DFB86219945C900A37404 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		270DFB88219945CA00A37404 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		270DFB8B219945CA00A37404 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		270DFB8D219945CA00A37404 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		270DFB9321994ACE00A37404 /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
+		2712C63921E4786300DECD9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2712C63B21E83B0B00DECD9F /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		2725717F21FEB189007AF94B /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		27257181220175BC007AF94B /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		272A55FF2207FE07000B964C /* AgeRangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRangeCell.swift; sourceTree = "<group>"; };
 		272B11E521A1E21F00B5014B /* TopNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationStackView.swift; sourceTree = "<group>"; };
 		272B11E721A23BC700B5014B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		272B11EA21ABB00E00B5014B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		272B11EE21B4EC2F00B5014B /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		272CEDA721C0D7F200EFCBE2 /* Advertiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertiser.swift; sourceTree = "<group>"; };
 		2789A5AE219BED7E0009230B /* HomeBottomControlsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomControlsStackView.swift; sourceTree = "<group>"; };
+		27D89C0C21DC75CC007123BB /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		27D89C0E21DC81F4007123BB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		27D89C1021E3201E007123BB /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		74266000C5A8EAFD6237A9FA /* Pods-Handee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Handee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Handee/Pods-Handee.debug.xcconfig"; sourceTree = "<group>"; };
+		F79E350DDFB81E3E96753F8E /* Pods_Handee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Handee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F86D20686CABD56A9327CED4 /* Pods-Handee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Handee.release.xcconfig"; path = "Pods/Target Support Files/Pods-Handee/Pods-Handee.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +63,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA18AD7D314A805F1EE2E984 /* Pods_Handee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		091D13D80510B21DCE2A0E43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74266000C5A8EAFD6237A9FA /* Pods-Handee.debug.xcconfig */,
+				F86D20686CABD56A9327CED4 /* Pods-Handee.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		270DFB75219945C800A37404 = {
 			isa = PBXGroup;
 			children = (
 				270DFB80219945C900A37404 /* Handee */,
 				270DFB7F219945C900A37404 /* Products */,
+				091D13D80510B21DCE2A0E43 /* Pods */,
+				473ACAB71BB56DD88CEFC802 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,16 +100,49 @@
 		270DFB80219945C900A37404 /* Handee */ = {
 			isa = PBXGroup;
 			children = (
+				272B11ED21B4EC1300B5014B /* ViewModels */,
+				272B11EC21B4EB7600B5014B /* Controllers */,
+				272B11E921ABAFFE00B5014B /* Model */,
 				2789A5AD219BED200009230B /* Views */,
 				270DFB81219945C900A37404 /* AppDelegate.swift */,
 				270DFB9321994ACE00A37404 /* Extensions+UIView.swift */,
-				270DFB83219945C900A37404 /* ViewController.swift */,
 				270DFB85219945C900A37404 /* Main.storyboard */,
 				270DFB88219945CA00A37404 /* Assets.xcassets */,
 				270DFB8A219945CA00A37404 /* LaunchScreen.storyboard */,
+				2712C63921E4786300DECD9F /* GoogleService-Info.plist */,
 				270DFB8D219945CA00A37404 /* Info.plist */,
 			);
 			path = Handee;
+			sourceTree = "<group>";
+		};
+		272B11E921ABAFFE00B5014B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				272B11EA21ABB00E00B5014B /* User.swift */,
+				272CEDA721C0D7F200EFCBE2 /* Advertiser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		272B11EC21B4EB7600B5014B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				270DFB83219945C900A37404 /* HomeController.swift */,
+				27D89C0C21DC75CC007123BB /* RegistrationController.swift */,
+				27D89C0E21DC81F4007123BB /* CustomTextField.swift */,
+				2712C63B21E83B0B00DECD9F /* Bindable.swift */,
+				2725717F21FEB189007AF94B /* SettingsController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		272B11ED21B4EC1300B5014B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				272B11EE21B4EC2F00B5014B /* CardViewModel.swift */,
+				27D89C1021E3201E007123BB /* RegistrationViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		2789A5AD219BED200009230B /* Views */ = {
@@ -80,8 +151,18 @@
 				2789A5AE219BED7E0009230B /* HomeBottomControlsStackView.swift */,
 				272B11E521A1E21F00B5014B /* TopNavigationStackView.swift */,
 				272B11E721A23BC700B5014B /* CardView.swift */,
+				27257181220175BC007AF94B /* SettingsCell.swift */,
+				272A55FF2207FE07000B964C /* AgeRangeCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		473ACAB71BB56DD88CEFC802 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F79E350DDFB81E3E96753F8E /* Pods_Handee.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 270DFB90219945CA00A37404 /* Build configuration list for PBXNativeTarget "Handee" */;
 			buildPhases = (
+				832B484C7EEF71B8D740DEAF /* [CP] Check Pods Manifest.lock */,
 				270DFB7A219945C800A37404 /* Sources */,
 				270DFB7B219945C800A37404 /* Frameworks */,
 				270DFB7C219945C800A37404 /* Resources */,
+				5DD8FB348C0FF038FA485FAA /* [CP] Embed Pods Frameworks */,
+				0CD87E13CE337AF4C0A4791C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				270DFB8C219945CA00A37404 /* LaunchScreen.storyboard in Resources */,
+				2712C63A21E4786300DECD9F /* GoogleService-Info.plist in Resources */,
 				270DFB89219945CA00A37404 /* Assets.xcassets in Resources */,
 				270DFB87219945C900A37404 /* Main.storyboard in Resources */,
 			);
@@ -150,17 +235,102 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0CD87E13CE337AF4C0A4791C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Handee/Pods-Handee-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Handee/Pods-Handee-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DD8FB348C0FF038FA485FAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Handee/Pods-Handee-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Handee/Pods-Handee-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		832B484C7EEF71B8D740DEAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Handee-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		270DFB7A219945C800A37404 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				270DFB84219945C900A37404 /* ViewController.swift in Sources */,
+				2712C63C21E83B0B00DECD9F /* Bindable.swift in Sources */,
+				270DFB84219945C900A37404 /* HomeController.swift in Sources */,
+				27D89C1121E3201E007123BB /* RegistrationViewModel.swift in Sources */,
+				27D89C0F21DC81F4007123BB /* CustomTextField.swift in Sources */,
 				2789A5AF219BED7E0009230B /* HomeBottomControlsStackView.swift in Sources */,
+				272CEDA821C0D7F200EFCBE2 /* Advertiser.swift in Sources */,
 				270DFB82219945C900A37404 /* AppDelegate.swift in Sources */,
+				272A56002207FE07000B964C /* AgeRangeCell.swift in Sources */,
 				270DFB9421994ACE00A37404 /* Extensions+UIView.swift in Sources */,
+				272B11EF21B4EC2F00B5014B /* CardViewModel.swift in Sources */,
 				272B11E821A23BC700B5014B /* CardView.swift in Sources */,
+				2725718021FEB189007AF94B /* SettingsController.swift in Sources */,
 				272B11E621A1E21F00B5014B /* TopNavigationStackView.swift in Sources */,
+				27D89C0D21DC75CC007123BB /* RegistrationController.swift in Sources */,
+				272B11EB21ABB00E00B5014B /* User.swift in Sources */,
+				27257182220175BC007AF94B /* SettingsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +474,7 @@
 		};
 		270DFB91219945CA00A37404 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74266000C5A8EAFD6237A9FA /* Pods-Handee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -322,6 +493,7 @@
 		};
 		270DFB92219945CA00A37404 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F86D20686CABD56A9327CED4 /* Pods-Handee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

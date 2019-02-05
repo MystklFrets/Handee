@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>765216098439-2vf2bvq8gb31i506mgq7k4dqbmvt57c9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.765216098439-2vf2bvq8gb31i506mgq7k4dqbmvt57c9</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAahnYrKzX6SUo3GrlDmLaLQnErtzX24Ms</string>
+	<key>GCM_SENDER_ID</key>
+	<string>765216098439</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>TheWorldChico.Handee</string>
+	<key>PROJECT_ID</key>
+	<string>handee-90b80</string>
+	<key>STORAGE_BUCKET</key>
+	<string>handee-90b80.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:765216098439:ios:48fb00d42fd0c531</string>
+	<key>DATABASE_URL</key>
+	<string>https://handee-90b80.firebaseio.com</string>
+</dict>
+</plist>
