@@ -19,9 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let db = Firestore.firestore()
         let settings = db.settings
         
-//        let timestamp: Timestamp = DocumentSnapshot.get("created_at") as! Timestamp
-//        let date: Date = timestamp.dateValue()
-        
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
         
@@ -29,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         //Change controller name to change what controller shows up initially
         window?.rootViewController = HomeController()
+        
+       //   window?.rootViewController = SwipingPhotosController(transitionStyle: .scroll, navigationOrientation: .horizontal)
         
         return true
     }
