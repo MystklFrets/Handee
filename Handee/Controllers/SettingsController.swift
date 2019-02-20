@@ -10,7 +10,6 @@ import Firebase
 import JGProgressHUD
 import SDWebImage
 
-
 protocol SettingsControllerDelegate {
     func didSaveSettings()
 }
@@ -21,8 +20,8 @@ class CustomImagePickerController: UIImagePickerController {
 
 class SettingsController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
     var delegate: SettingsControllerDelegate?
+    
     // instance properties
     lazy var image1Button = createButton(selector: #selector(handleSelectPhoto))
     lazy var image2Button = createButton(selector: #selector(handleSelectPhoto))
@@ -102,27 +101,25 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
         fetchCurrentUser()
     }
     
-    
-    
     var user: User?
+
+        fileprivate func fetchCurrentUser() {
+            // fetch some Firestore Data
+            guard let uid = Auth.auth().currentUser?.uid else { return }
+            Firestore.firestore().collection("users").document(uid).getDocument { (snapshot, err) in
+                if let err = err {
+                    print(err)
+                    return
+                }
     
-    fileprivate func fetchCurrentUser() {
-        // fetch some Firestore Data
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        Firestore.firestore().collection("users").document(uid).getDocument { (snapshot, err) in
-            if let err = err {
-                print(err)
-                return
+                // fetched our user here
+                guard let dictionary = snapshot?.data() else { return }
+                self.user = User(dictionary: dictionary)
+                self.loadUserPhotos()
+    
+                self.tableView.reloadData()
             }
-            
-            // fetched our user here
-            guard let dictionary = snapshot?.data() else { return }
-            self.user = User(dictionary: dictionary)
-            self.loadUserPhotos()
-            
-            self.tableView.reloadData()
         }
-    }
     
     fileprivate func loadUserPhotos() {
         if let imageUrl = user?.imageUrl1, let url = URL(string: imageUrl) {
@@ -233,6 +230,9 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
         user?.maxSeekingAge = maxValue
     }
     
+    static let defaultMinSeekingAge = 50
+    static let defaultMaxSeekingAge = 100
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // age range cell
@@ -241,10 +241,13 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
             ageRangeCell.minSlider.addTarget(self, action: #selector(handleMinAgeChange), for: .valueChanged)
             ageRangeCell.maxSlider.addTarget(self, action: #selector(handleMaxAgeChange), for: .valueChanged)
             // we need to set up the labels on our cell here
-            ageRangeCell.minLabel.text = "Min \(user?.minSeekingAge ?? -1)"
-            ageRangeCell.maxLabel.text = "Max \(user?.maxSeekingAge ?? -1)"
-            ageRangeCell.minSlider.value = Float(user?.minSeekingAge ?? -1)
-            ageRangeCell.maxSlider.value = Float(user?.maxSeekingAge ?? -1)
+            let minAge = user?.minSeekingAge ?? SettingsController.defaultMinSeekingAge
+            let maxAge = user?.maxSeekingAge ?? SettingsController.defaultMaxSeekingAge
+            
+            ageRangeCell.minLabel.text = "Min \(minAge)"
+            ageRangeCell.maxLabel.text = "Max \(maxAge)"
+            ageRangeCell.minSlider.value = Float(minAge)
+            ageRangeCell.maxSlider.value = Float(maxAge)
             return ageRangeCell
         }
         
@@ -297,7 +300,6 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
     @objc fileprivate func handleLogout() {
         try? Auth.auth().signOut()
         dismiss(animated: true)
-        
     }
     
     @objc fileprivate func handleSave() {
@@ -327,9 +329,9 @@ class SettingsController: UITableViewController, UIImagePickerControllerDelegate
             
             print("Finished saving user info")
             self.dismiss(animated: true, completion: {
-                print("dismissla completed")
+                print("Dismissal complete")
                 self.delegate?.didSaveSettings()
-             
+                //                homeController.fetchCurrentUser() // I want to refetch my cards inside of homeController somehow
             })
         }
     }

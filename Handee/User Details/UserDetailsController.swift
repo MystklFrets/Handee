@@ -1,11 +1,3 @@
-//
-//  UserDetailsController.swift
-//  Handee
-//
-//  Created by Raul Fernando Gutierrez on 2/9/19.
-//  Copyright © 2019 Raul Fernando Gutierrez. All rights reserved.
-//
-
 import UIKit
 import SDWebImage
 
@@ -29,7 +21,7 @@ class UserDetailsController: UIViewController, UIScrollViewDelegate {
     }()
     
     // how do i swap out a UIImageView with a UIViewController component
-    let swipingPhotosController = SwipingPhotosController(transitionStyle: .scroll, navigationOrientation: .horizontal)
+    let swipingPhotosController = SwipingPhotosController()
     
     let infoLabel: UILabel = {
         let label = UILabel()
@@ -47,7 +39,7 @@ class UserDetailsController: UIViewController, UIScrollViewDelegate {
     
     // 3 bottom control buttons
     
-    lazy var dislikeButton = self.createButton(image: #imageLiteral(resourceName: "dismiss_circle"), selector: #selector(handleDislike))
+    lazy var dislikeButton = self.createButton(image: #imageLiteral(resourceName: "boost_circle"), selector: #selector(handleDislike))
     lazy var superLikeButton = self.createButton(image: #imageLiteral(resourceName: "super_like_circle"), selector: #selector(handleDislike))
     lazy var likeButton = self.createButton(image: #imageLiteral(resourceName: "like_circle"), selector: #selector(handleDislike))
     

@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = HomeController()
         
        //   window?.rootViewController = SwipingPhotosController(transitionStyle: .scroll, navigationOrientation: .horizontal)
-        
+        Thread.sleep(forTimeInterval: 2.0)
         return true
     }
 

@@ -8,6 +8,7 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as? UIImage
         registrationViewModel.bindableImage.value = image
+        registrationViewModel.checkFormValidity()
         dismiss(animated: true, completion: nil)
     }
     
@@ -20,6 +21,7 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
 class RegistrationController: UIViewController {
     
     var delegate: LoginControllerDelegate?
+    
     // UI Components
     let selectPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -99,6 +101,10 @@ class RegistrationController: UIViewController {
                 return
             }
             print("Finished registering our user")
+            
+            self?.dismiss(animated: true, completion: {
+                self?.delegate?.didFinishLoggingIn()
+            })
         }
     }
     
@@ -109,11 +115,6 @@ class RegistrationController: UIViewController {
         hud.detailTextLabel.text = error.localizedDescription
         hud.show(in: self.view)
         hud.dismiss(afterDelay: 4)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewDidLoad() {
@@ -134,7 +135,7 @@ class RegistrationController: UIViewController {
         registrationViewModel.bindableIsFormValid.bind { [unowned self] (isFormValid) in
             guard let isFormValid = isFormValid else { return }
             self.registerButton.isEnabled = isFormValid
-            self.registerButton.backgroundColor = isFormValid ? #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1) : .lightGray
+            self.registerButton.backgroundColor = isFormValid ? #colorLiteral(red: 0.8235294118, green: 0, blue: 0.3254901961, alpha: 1) : .lightGray
             self.registerButton.setTitleColor(isFormValid ? .white : .gray, for: .normal)
         }
         registrationViewModel.bindableImage.bind { [unowned self] (img) in self.selectPhotoButton.setImage(img?.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -233,15 +234,16 @@ class RegistrationController: UIViewController {
         navigationController?.pushViewController(loginController, animated: true)
     }
     
-    
     fileprivate func setupLayout() {
         navigationController?.isNavigationBarHidden = true
+        
         view.addSubview(overallStackView)
         
         overallStackView.axis = .vertical
         overallStackView.spacing = 8
         overallStackView.anchor(top: nil, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 50, bottom: 0, right: 50))
         overallStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
         view.addSubview(goToLoginButton)
         goToLoginButton.anchor(top: nil, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor)
     }
@@ -263,4 +265,5 @@ class RegistrationController: UIViewController {
         view.layer.addSublayer(gradientLayer)
         gradientLayer.frame = view.bounds
     }
+    
 }
