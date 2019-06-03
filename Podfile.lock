@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.8.2)
   - BoringSSL (10.0.6):
     - BoringSSL/Implementation (= 10.0.6)
     - BoringSSL/Interface (= 10.0.6)
@@ -65,23 +66,23 @@ PODS:
     - GoogleUtilities/Network (~> 5.2)
     - GoogleUtilities/NSData+zlib (~> 5.2)
     - nanopb (~> 0.3)
-  - GoogleUtilities/AppDelegateSwizzler (5.3.6):
+  - GoogleUtilities/AppDelegateSwizzler (5.8.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (5.3.6)
-  - GoogleUtilities/Logger (5.3.6):
+  - GoogleUtilities/Environment (5.8.0)
+  - GoogleUtilities/Logger (5.8.0):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (5.3.6):
+  - GoogleUtilities/MethodSwizzler (5.8.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (5.3.6):
+  - GoogleUtilities/Network (5.8.0):
     - GoogleUtilities/Logger
     - GoogleUtilities/NSData+zlib
     - GoogleUtilities/Reachability
-  - GoogleUtilities/NSData+zlib (5.3.6)
-  - GoogleUtilities/Reachability (5.3.6):
+  - GoogleUtilities/NSData+zlib (5.8.0)
+  - GoogleUtilities/Reachability (5.8.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (5.3.6):
+  - GoogleUtilities/UserDefaults (5.8.0):
     - GoogleUtilities/Logger
   - gRPC-C++ (0.0.5):
     - gRPC-C++/Implementation (= 0.0.5)
@@ -99,29 +100,39 @@ PODS:
     - gRPC-Core/Interface (= 1.14.0)
     - nanopb (~> 0.3)
   - gRPC-Core/Interface (1.14.0)
-  - GTMSessionFetcher/Core (1.2.1)
+  - GTMSessionFetcher/Core (1.2.2)
   - JGProgressHUD (2.0.3)
+  - LBTATools (1.0.6)
   - leveldb-library (1.20)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
-  - Protobuf (3.6.1)
-  - SDWebImage (4.4.3):
-    - SDWebImage/Core (= 4.4.3)
-  - SDWebImage/Core (4.4.3)
+  - NVActivityIndicatorView (4.7.0):
+    - NVActivityIndicatorView/Presenter (= 4.7.0)
+  - NVActivityIndicatorView/Presenter (4.7.0)
+  - Protobuf (3.8.0)
+  - SDWebImage (4.4.6):
+    - SDWebImage/Core (= 4.4.6)
+  - SDWebImage/Core (4.4.6)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
   - Firebase/Auth (~> 5.15.0)
   - Firebase/Core
   - Firebase/Firestore (~> 5.15.0)
   - Firebase/Storage (~> 5.15.0)
   - GoogleAppMeasurement (~> 5.4.0)
   - JGProgressHUD (~> 2.0.3)
+  - LBTATools
+  - NVActivityIndicatorView
   - SDWebImage (~> 4.4.2)
+  - SwiftyJSON (~> 4.0)
 
 SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
@@ -132,16 +143,19 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: e2fa4cb35ef5558c200f7f0ad8a53e212215f93e
   FirebaseStorage: 3d22c041370593e639fba013d1eb698a8dae2881
   GoogleAppMeasurement: 98b71f5e04142793729a5ef23e5b96651ff4b70f
-  GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
+  GoogleUtilities: 04fce34bcd5620c1ee76fb79172105c74a4df335
   gRPC-C++: 19eec1ffd34de29453f5fab5b4697ad0f240ad51
   gRPC-Core: f4836515817c0eb479aeeb9cc27c91c4ba62a9f6
-  GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
+  LBTATools: ab52bd47d7e4e31eff1bdf72f4d92829a7d029e1
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
-  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
+  Protobuf: 3f617b9a6e73605565086864c9bc26b2bf2dd5a3
+  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 4a8a173e6d268e092fdeb3053727041b6bb6b85f
+PODFILE CHECKSUM: bb2eb0d172565b3109100981a542df0bf8b7d29a
 
 COCOAPODS: 1.4.0

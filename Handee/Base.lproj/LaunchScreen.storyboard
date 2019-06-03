@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,28 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_icon2" translatesAutoresizingMaskIntoConstraints="NO" id="sGb-xx-7B7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="handeeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="sGb-xx-7B7">
                                 <rect key="frame" x="98" y="244" width="179" height="179"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="179" id="Qw1-i4-34H"/>
                                     <constraint firstAttribute="width" constant="179" id="cFz-pN-q5U"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mow n' blow? Edging? Swipe right." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJL-AH-v6O">
-                                <rect key="frame" x="16" y="450" width="343" height="32"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-UltraLight" family="Avenir Next Condensed" pointSize="23"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe right to meet Mr. Green!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJL-AH-v6O">
+                                <rect key="frame" x="16" y="450" width="343" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-UltraLight" family="Avenir Next Condensed" pointSize="22"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenmate" translatesAutoresizingMaskIntoConstraints="NO" id="8Dz-aS-Rcs">
+                                <rect key="frame" x="67" y="177" width="240" height="50"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UJL-AH-v6O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3Jb-Q9-3Jh"/>
+                            <constraint firstItem="8Dz-aS-Rcs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="Amp-Aw-Hok"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UJL-AH-v6O" secondAttribute="trailing" constant="16" id="Fxt-1P-z1F"/>
                             <constraint firstItem="UJL-AH-v6O" firstAttribute="top" secondItem="sGb-xx-7B7" secondAttribute="bottom" constant="27" id="Ijx-tH-CrN"/>
+                            <constraint firstItem="8Dz-aS-Rcs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="157" id="LOW-V4-ZBd"/>
                             <constraint firstItem="sGb-xx-7B7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="98" id="QM2-Xj-FEg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sGb-xx-7B7" secondAttribute="trailing" constant="98" id="QVx-NU-Gib"/>
+                            <constraint firstItem="sGb-xx-7B7" firstAttribute="top" secondItem="8Dz-aS-Rcs" secondAttribute="bottom" constant="17" id="QmQ-YH-cKD"/>
                             <constraint firstItem="sGb-xx-7B7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="224" id="U6b-gg-I7G"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Dz-aS-Rcs" secondAttribute="trailing" constant="68" id="imj-zb-hyN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -50,6 +57,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="app_icon2" width="562" height="562"/>
+        <image name="greenmate" width="770" height="102"/>
+        <image name="handeeLogo" width="1024" height="1024"/>
     </resources>
 </document>

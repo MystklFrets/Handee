@@ -14,5 +14,10 @@ pod 'Firebase/Core'
 pod 'GoogleAppMeasurement', '~> 5.4.0'
 pod 'SDWebImage', '~>4.4.2'
 pod 'JGProgressHUD', '~>2.0.3'
+pod 'LBTATools'
+
+pod 'Alamofire', '~> 4.7'
+pod 'SwiftyJSON', '~> 4.0'
+pod 'NVActivityIndicatorView'
 
 end

@@ -4,7 +4,6 @@ import Firebase
 import JGProgressHUD
 
 extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as? UIImage
         registrationViewModel.bindableImage.value = image
@@ -20,13 +19,31 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
 
 class RegistrationController: UIViewController {
     
-    var delegate: LoginControllerDelegate?
     
+//    let dropDown = UIPickerView()
+    var list = ["Homeowner","Business Owner","Commercial Property"]
+    
+//    func createPicker(){
+//        let dropDown = UIPickerView()
+//        dropDown.dataSource = self
+//        dropDown.delegate = self
+//        dropDown.backgroundColor = UIColor.white
+//        dropDown.isOpaque = true
+//        typeTextField.inputView = dropDown
+//
+//    }
+    
+
+    
+
+
+    var delegate: LoginControllerDelegate?
+
     // UI Components
     let selectPhotoButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Select Photo", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 32, weight: .heavy)
+        button.setTitle("Profile Photo", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .heavy)
         button.backgroundColor = .white
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 16
@@ -66,11 +83,24 @@ class RegistrationController: UIViewController {
         return tf
     }()
     
+    let typeTextField: CustomTextField = {
+        let tf = CustomTextField(padding: 24, height: 50)
+        tf.placeholder = "Select One"
+        
+        //tf.text = "Homeowner"
+        //tf.isUserInteractionEnabled = false
+        //tf.keyboardType = .emailAddress
+        tf.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
+        return tf
+    }()
+    
     @objc fileprivate func handleTextChange(textField: UITextField) {
         if textField == fullNameTextField {
             registrationViewModel.fullName = textField.text
         } else if textField == emailTextField {
             registrationViewModel.email = textField.text
+        } else if textField == typeTextField {
+            registrationViewModel.userType = textField.text
         } else {
             registrationViewModel.password = textField.text
         }
@@ -125,6 +155,11 @@ class RegistrationController: UIViewController {
         setupNotificationObservers()
         setupTapGesture()
         setupRegistrationViewModelObserver()
+        createPicker()
+        createToolBar()
+        
+       // self.dropDown.translatesAutoresizingMaskIntoConstraints = false
+        
     }
     
     // MARK:- Private
@@ -135,7 +170,7 @@ class RegistrationController: UIViewController {
         registrationViewModel.bindableIsFormValid.bind { [unowned self] (isFormValid) in
             guard let isFormValid = isFormValid else { return }
             self.registerButton.isEnabled = isFormValid
-            self.registerButton.backgroundColor = isFormValid ? #colorLiteral(red: 0.8235294118, green: 0, blue: 0.3254901961, alpha: 1) : .lightGray
+            self.registerButton.backgroundColor = isFormValid ? #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1) : .lightGray
             self.registerButton.setTitleColor(isFormValid ? .white : .gray, for: .normal)
         }
         registrationViewModel.bindableImage.bind { [unowned self] (img) in self.selectPhotoButton.setImage(img?.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -193,6 +228,7 @@ class RegistrationController: UIViewController {
             fullNameTextField,
             emailTextField,
             passwordTextField,
+            typeTextField,
             registerButton
             ])
         sv.axis = .vertical
@@ -221,9 +257,9 @@ class RegistrationController: UIViewController {
     
     let goToLoginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Go to Login", for: .normal)
+        button.setTitle("Already a member? Login", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .light)
         button.addTarget(self, action: #selector(handleGoToLogin), for: .touchUpInside)
         return button
     }()
@@ -240,7 +276,7 @@ class RegistrationController: UIViewController {
         view.addSubview(overallStackView)
         
         overallStackView.axis = .vertical
-        overallStackView.spacing = 8
+        overallStackView.spacing = 4 //8
         overallStackView.anchor(top: nil, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 50, bottom: 0, right: 50))
         overallStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
@@ -264,6 +300,82 @@ class RegistrationController: UIViewController {
         gradientLayer.locations = [0, 1]
         view.layer.addSublayer(gradientLayer)
         gradientLayer.frame = view.bounds
+    }
+    
+    func createPicker() {
+        let dropDown = UIPickerView()
+        dropDown.delegate = self
+        dropDown.backgroundColor = UIColor.black
+        typeTextField.inputView = dropDown
+        
+    }
+    
+    func createToolBar(){
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        toolBar.barTintColor = .black
+        toolBar.tintColor = .white
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(RegistrationController.dismissKeyboard))
+
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        typeTextField.inputAccessoryView = toolBar
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+var selectedUserType: String?
+
+extension RegistrationController:  UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return list.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+       // self.view.endEditing(true)
+        return list[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedUserType = list[row]
+        typeTextField.text = selectedUserType
+        
+       // self.typeTextField.text = self.list[row]
+       // dropDown.isHidden = true
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label: UILabel
+        
+        if let view = view as? UILabel {
+            label = view
+        } else {
+            label = UILabel()
+        }
+        label.textColor = .green
+        label.textAlignment = .center
+        label.font = UIFont(name: "Avenir-Light", size: 16)
+        
+        label.text = list[row]
+        return label
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == self.typeTextField {
+           // self.dropDown.isHidden = false
+            //if you dont want the users to se the keyboard type:
+            textField.endEditing(true)
+        }
     }
     
 }

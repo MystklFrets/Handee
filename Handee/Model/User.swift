@@ -15,6 +15,8 @@ struct User: ProducesCardViewModel {
     var minSeekingAge: Int?
     var maxSeekingAge: Int?
     
+    var userType: String?
+    
     init(dictionary: [String: Any]) {
         // we'll initialize our user here
         self.age = dictionary["age"] as? Int
@@ -26,17 +28,23 @@ struct User: ProducesCardViewModel {
         self.uid = dictionary["uid"] as? String ?? ""
         self.minSeekingAge = dictionary["minSeekingAge"] as? Int
         self.maxSeekingAge = dictionary["maxSeekingAge"] as? Int
+        
+        self.userType = dictionary["userType"] as? String
+        
+        
     }
     
     func toCardViewModel() -> CardViewModel {
-        let attributedText = NSMutableAttributedString(string: name ?? "", attributes: [.font: UIFont.systemFont(ofSize: 32, weight: .heavy)])
+        let attributedText = NSMutableAttributedString(string: name ?? "", attributes: [.font: UIFont.systemFont(ofSize: 26, weight: .heavy), NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        
         
         let ageString = age != nil ? "\(age!)" : "N\\A"
         
-        attributedText.append(NSAttributedString(string: "  \(ageString)", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .regular)]))
+        attributedText.append(NSAttributedString(string: " at $\(ageString)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular), NSAttributedString.Key.foregroundColor: UIColor.white]))
         
         let professionString = profession != nil ? profession! : "Not available"
-        attributedText.append(NSAttributedString(string: "\n\(professionString)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
+        attributedText.append(NSAttributedString(string: "\n\(professionString)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular),NSAttributedString.Key.foregroundColor: UIColor.white]))
         
         var imageUrls = [String]() // empty string array
         if let url = imageUrl1 { imageUrls.append(url) }

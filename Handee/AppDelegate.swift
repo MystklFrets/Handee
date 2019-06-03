@@ -25,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         //Change controller name to change what controller shows up initially
-        window?.rootViewController = HomeController()
+        window?.rootViewController = UINavigationController(rootViewController: HomeController())
+            //HomeController()
         
        //   window?.rootViewController = SwipingPhotosController(transitionStyle: .scroll, navigationOrientation: .horizontal)
         Thread.sleep(forTimeInterval: 2.0)
@@ -53,7 +54,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
