@@ -5,17 +5,27 @@
 //  Created by Raul Fernando Gutierrez on 6/2/19.
 //  Copyright © 2019 Raul Fernando Gutierrez. All rights reserved.
 //
-
 import LBTATools
+import Firebase
 
-class MatchCell: LBTAListCell<UIColor> {
+struct Match {
+    let name, profileImageUrl: String
     
-    let profileImageView = UIImageView(image: #imageLiteral(resourceName: "grassMowed2"), contentMode: .scaleAspectFill)
+    init(dictionary: [String: Any]) {
+        self.name = dictionary["name"] as? String ?? ""
+        self.profileImageUrl = dictionary["profileImageUrl"] as? String ?? ""
+    }
+}
+
+class MatchCell: LBTAListCell<Match> {
+    
+    let profileImageView = UIImageView(image: #imageLiteral(resourceName: "handeeLogo"), contentMode: .scaleAspectFill)
     let usernameLabel = UILabel(text: "Username Here", font: .systemFont(ofSize: 14, weight: .semibold), textColor: #colorLiteral(red: 0.2550676465, green: 0.2552897036, blue: 0.2551020384, alpha: 1), textAlignment: .center, numberOfLines: 2)
     
-    override var item: UIColor! {
+    override var item: Match! {
         didSet {
-            backgroundColor = item
+            usernameLabel.text = item.name
+            profileImageView.sd_setImage(with: URL(string: item.profileImageUrl))
         }
     }
     
@@ -32,7 +42,7 @@ class MatchCell: LBTAListCell<UIColor> {
     }
 }
 
-class MatchesMessagesController: LBTAListController<MatchCell, UIColor>, UICollectionViewDelegateFlowLayout {
+class MatchesMessagesController: LBTAListController<MatchCell, Match>, UICollectionViewDelegateFlowLayout {
     
     let customNavBar = MatchesNavBar()
     
@@ -40,12 +50,16 @@ class MatchesMessagesController: LBTAListController<MatchCell, UIColor>, UIColle
         return .init(width: 120, height: 140)
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let match = items[indexPath.item]
+        let chatLogController = ChatLogController(match: match)
+        navigationController?.pushViewController(chatLogController, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        items = [
-            .red, .blue, .green, .purple, .orange
-        ]
+        fetchMatches()
         
         collectionView.backgroundColor = .white
         
@@ -57,9 +71,35 @@ class MatchesMessagesController: LBTAListController<MatchCell, UIColor>, UIColle
         collectionView.contentInset.top = 150
     }
     
+    fileprivate func fetchMatches() {
+        guard let currentUserId = Auth.auth().currentUser?.uid else { return }
+        Firestore.firestore().collection("matches_messages").document(currentUserId).collection("matches").getDocuments { (querySnapshot, err) in
+            
+            if let err = err {
+                print("Failed to fetch matches:", err)
+                return
+            }
+            
+            print("Here are my matches documents")
+            
+            var matches = [Match]()
+            
+            querySnapshot?.documents.forEach({ (documentSnapshot) in
+                let dictionary = documentSnapshot.data()
+                matches.append(.init(dictionary: dictionary))
+            })
+            
+            self.items = matches
+            self.collectionView.reloadData()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 16, left: 0, bottom: 16, right: 0)
+    }
+    
     @objc fileprivate func handleBack() {
         navigationController?.popViewController(animated: true)
     }
     
 }
-

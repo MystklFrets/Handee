@@ -17,6 +17,10 @@
 		27243433221A7D21006117BE /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27243432221A7D21006117BE /* MatchView.swift */; };
 		27243435221B4499006117BE /* SendMessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27243434221B4499006117BE /* SendMessageButton.swift */; };
 		27243437221B44CD006117BE /* KeepSwipingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27243436221B44CD006117BE /* KeepSwipingButton.swift */; };
+		2724483122A8361500D5032B /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724483022A8361500D5032B /* ChatLogController.swift */; };
+		2724483322A83B4800D5032B /* MessagesNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724483222A83B4800D5032B /* MessagesNavBar.swift */; };
+		2724483522AA42D800D5032B /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724483422AA42D800D5032B /* MessageCell.swift */; };
+		2724483722AA46D100D5032B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724483622AA46D100D5032B /* Message.swift */; };
 		2725718021FEB189007AF94B /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725717F21FEB189007AF94B /* SettingsController.swift */; };
 		27257182220175BC007AF94B /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27257181220175BC007AF94B /* SettingsCell.swift */; };
 		27267EC3220EB24900205401 /* UserDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27267EC2220EB24900205401 /* UserDetailsController.swift */; };
@@ -55,6 +59,10 @@
 		27243432221A7D21006117BE /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		27243434221B4499006117BE /* SendMessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageButton.swift; sourceTree = "<group>"; };
 		27243436221B44CD006117BE /* KeepSwipingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepSwipingButton.swift; sourceTree = "<group>"; };
+		2724483022A8361500D5032B /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
+		2724483222A83B4800D5032B /* MessagesNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesNavBar.swift; sourceTree = "<group>"; };
+		2724483422AA42D800D5032B /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		2724483622AA46D100D5032B /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2725717F21FEB189007AF94B /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		27257181220175BC007AF94B /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		27267EC2220EB24900205401 /* UserDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsController.swift; sourceTree = "<group>"; };
@@ -221,6 +229,10 @@
 			children = (
 				27B9B8BA22A4CA4B002171DC /* MatchesMessagesController.swift */,
 				27B9B8BE22A4D7D0002171DC /* MatchesNavBar.swift */,
+				2724483022A8361500D5032B /* ChatLogController.swift */,
+				2724483222A83B4800D5032B /* MessagesNavBar.swift */,
+				2724483422AA42D800D5032B /* MessageCell.swift */,
+				2724483622AA46D100D5032B /* Message.swift */,
 			);
 			path = MatchesMessages;
 			sourceTree = "<group>";
@@ -393,12 +405,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2724483122A8361500D5032B /* ChatLogController.swift in Sources */,
 				27267EC3220EB24900205401 /* UserDetailsController.swift in Sources */,
 				2712C63C21E83B0B00DECD9F /* Bindable.swift in Sources */,
 				270DFB84219945C900A37404 /* HomeController.swift in Sources */,
 				272969172213F3E40086D591 /* PhotoController.swift in Sources */,
+				2724483322A83B4800D5032B /* MessagesNavBar.swift in Sources */,
 				27D89C1121E3201E007123BB /* RegistrationViewModel.swift in Sources */,
 				27D89C0F21DC81F4007123BB /* CustomTextField.swift in Sources */,
+				2724483522AA42D800D5032B /* MessageCell.swift in Sources */,
 				2789A5AF219BED7E0009230B /* HomeBottomControlsStackView.swift in Sources */,
 				272CEDA821C0D7F200EFCBE2 /* Advertiser.swift in Sources */,
 				270DFB82219945C900A37404 /* AppDelegate.swift in Sources */,
@@ -417,6 +432,7 @@
 				27243437221B44CD006117BE /* KeepSwipingButton.swift in Sources */,
 				272B11EB21ABB00E00B5014B /* User.swift in Sources */,
 				27267EC5220FCAE100205401 /* SwipingPhotosController.swift in Sources */,
+				2724483722AA46D100D5032B /* Message.swift in Sources */,
 				27257182220175BC007AF94B /* SettingsCell.swift in Sources */,
 				27B9B8BF22A4D7D0002171DC /* MatchesNavBar.swift in Sources */,
 			);
