@@ -21,6 +21,9 @@
 		2724483322A83B4800D5032B /* MessagesNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724483222A83B4800D5032B /* MessagesNavBar.swift */; };
 		2724483522AA42D800D5032B /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724483422AA42D800D5032B /* MessageCell.swift */; };
 		2724483722AA46D100D5032B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724483622AA46D100D5032B /* Message.swift */; };
+		2724483922AC9D3400D5032B /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724483822AC9D3400D5032B /* CustomInputAccessoryView.swift */; };
+		2724483B22B4D17100D5032B /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724483A22B4D17100D5032B /* MatchCell.swift */; };
+		2724483D22B5820900D5032B /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724483C22B5820900D5032B /* Match.swift */; };
 		2725718021FEB189007AF94B /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725717F21FEB189007AF94B /* SettingsController.swift */; };
 		27257182220175BC007AF94B /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27257181220175BC007AF94B /* SettingsCell.swift */; };
 		27267EC3220EB24900205401 /* UserDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27267EC2220EB24900205401 /* UserDetailsController.swift */; };
@@ -63,6 +66,9 @@
 		2724483222A83B4800D5032B /* MessagesNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesNavBar.swift; sourceTree = "<group>"; };
 		2724483422AA42D800D5032B /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		2724483622AA46D100D5032B /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		2724483822AC9D3400D5032B /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
+		2724483A22B4D17100D5032B /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
+		2724483C22B5820900D5032B /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		2725717F21FEB189007AF94B /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		27257181220175BC007AF94B /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		27267EC2220EB24900205401 /* UserDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsController.swift; sourceTree = "<group>"; };
@@ -174,6 +180,7 @@
 				272B11EA21ABB00E00B5014B /* User.swift */,
 				272CEDA721C0D7F200EFCBE2 /* Advertiser.swift */,
 				27B9B8BC22A4CD75002171DC /* Extensions.swift */,
+				2724483C22B5820900D5032B /* Match.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,6 +240,8 @@
 				2724483222A83B4800D5032B /* MessagesNavBar.swift */,
 				2724483422AA42D800D5032B /* MessageCell.swift */,
 				2724483622AA46D100D5032B /* Message.swift */,
+				2724483822AC9D3400D5032B /* CustomInputAccessoryView.swift */,
+				2724483A22B4D17100D5032B /* MatchCell.swift */,
 			);
 			path = MatchesMessages;
 			sourceTree = "<group>";
@@ -413,12 +422,14 @@
 				2724483322A83B4800D5032B /* MessagesNavBar.swift in Sources */,
 				27D89C1121E3201E007123BB /* RegistrationViewModel.swift in Sources */,
 				27D89C0F21DC81F4007123BB /* CustomTextField.swift in Sources */,
+				2724483D22B5820900D5032B /* Match.swift in Sources */,
 				2724483522AA42D800D5032B /* MessageCell.swift in Sources */,
 				2789A5AF219BED7E0009230B /* HomeBottomControlsStackView.swift in Sources */,
 				272CEDA821C0D7F200EFCBE2 /* Advertiser.swift in Sources */,
 				270DFB82219945C900A37404 /* AppDelegate.swift in Sources */,
 				272A56002207FE07000B964C /* AgeRangeCell.swift in Sources */,
 				27243433221A7D21006117BE /* MatchView.swift in Sources */,
+				2724483922AC9D3400D5032B /* CustomInputAccessoryView.swift in Sources */,
 				272A5605220BF6F6000B964C /* LoginViewModel.swift in Sources */,
 				27B9B8BB22A4CA4B002171DC /* MatchesMessagesController.swift in Sources */,
 				272B11EF21B4EC2F00B5014B /* CardViewModel.swift in Sources */,
@@ -427,6 +438,7 @@
 				272A5604220BF6F6000B964C /* LoginController.swift in Sources */,
 				2725718021FEB189007AF94B /* SettingsController.swift in Sources */,
 				272B11E621A1E21F00B5014B /* TopNavigationStackView.swift in Sources */,
+				2724483B22B4D17100D5032B /* MatchCell.swift in Sources */,
 				27D89C0D21DC75CC007123BB /* RegistrationController.swift in Sources */,
 				27B9B8BD22A4CD75002171DC /* Extensions.swift in Sources */,
 				27243437221B44CD006117BE /* KeepSwipingButton.swift in Sources */,
